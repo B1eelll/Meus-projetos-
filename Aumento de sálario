@@ -1,0 +1,66 @@
+package cursoP;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+	    Locale.setDefault(Locale.US);
+	
+	  //1042 
+	    
+	    double salario = sc.nextDouble();
+	    double novoSalario; 
+
+	    
+	    if (salario <= 400.00){
+	    	novoSalario = salario * ( 1 + 0.15);
+	    	System.out.printf("Novo salário: %.2f %n" ,novoSalario);
+	        double reajuste = novoSalario - salario;
+	    	System.out.printf("Reajuste ganho: %.2f%n" ,reajuste);
+	    	double percentual = ((novoSalario - salario) / salario) *100 ;
+	    	System.out.printf("Em percentual: %.0f" ,percentual);
+	    	System.out.print("%");
+	    }
+	    else if (salario <= 400.01) {
+	    	novoSalario = salario * ( 1 + 0.12);
+	    	System.out.printf("Novo salário: %.2f %n" ,novoSalario);
+	        double reajuste = novoSalario - salario;
+	    	System.out.printf("Reajuste ganho: %.2f%n" ,reajuste);
+	    	double percentual = ((novoSalario - salario) / salario) *100 ;
+	    	System.out.printf("Em percentual: %.0f" ,percentual);
+	    	System.out.print("%");
+	    }
+	    else if (salario <= 800.01) {
+	    	novoSalario = salario * ( 1 + 0.10);
+	    	System.out.printf("Novo salário: %.2f %n" ,novoSalario);
+	        double reajuste = novoSalario - salario;
+	    	System.out.printf("Reajuste ganho: %.2f%n" ,reajuste);
+	    	double percentual = ((novoSalario - salario) / salario) *100 ;
+	    	System.out.printf("Em percentual: %.0f" ,percentual);
+	    	System.out.print("%");
+	    }
+	    else if (salario >= 1200.01) {
+	    	novoSalario = salario * ( 1 + 0.07);
+	    	System.out.printf("Novo salário: %.2f %n" ,novoSalario);
+	        double reajuste = novoSalario - salario;
+	    	System.out.printf("Reajuste ganho: %.2f%n" ,reajuste);
+	    	double percentual = ((novoSalario - salario) / salario) *100 ;
+	    	System.out.printf("Em percentual: %.0f" ,percentual);
+	    	System.out.print("%");
+	    }
+	    else if (salario > 2000.00)	 {
+	    	novoSalario = salario * ( 1 + 0.04);
+	    	System.out.printf("Novo salário: %.2f %n" ,novoSalario);
+	        double reajuste = novoSalario - salario;
+	    	System.out.printf("Reajuste ganho: %.2f%n" ,reajuste);
+	    	double percentual = ((novoSalario - salario) / salario) *100 ;
+	    	System.out.printf("Em percentual: %.0f" ,percentual);
+	    	System.out.print("%");
+	    }
+	}
+	
+}
