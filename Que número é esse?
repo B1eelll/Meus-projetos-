@@ -1,0 +1,32 @@
+package deBugui;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class main {
+
+	public static void main(String[] args) {
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+ int n = sc.nextInt();
+ 	
+    if (n % 2 == 0 && n > 0) {
+    	System.out.println("EVEN POSITIVE");
+ 	
+    }else if (n % 2 == 0 && n <0) {
+    	System.out.println("EVEN NEGATIVE");
+   
+    }else if ( n % 2 != 0 && n > 0) {
+    	System.out.println("ODD POSITIVE");
+ 
+    }else if ( n % 2 != 0 && n < 0) {
+    	System.out.println("ODD NEGATIVE");
+    
+    }else if (n == 0) {
+    	System.out.println("NULL");
+    }
+sc.close();
+		}
+}
