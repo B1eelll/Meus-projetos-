@@ -1,0 +1,198 @@
+//1.1-para se iniciar o programa, será necessario uma senha de acesso(2411)OK
+
+//1.2-o programa não poderá ser iniciado enquanto a senha não for informada OK
+
+//1.2.1-Digite 1 para iniar a votação ou 0 para encerrar.OK
+
+//1.3-caso o digite 1 o sistema deverá colher as seguintes informações.OK
+
+//1.3.1-solicitar ao eleitor para votar no candidato a prefeito. o sistema OK
+//deverá ter cadastrado os seguintes candidatos:
+// Hebert - número 90
+// Ribeiro - número 95
+
+//1.3.2-solicitar ao eleitor que vote no candidato a vereador. o sistema OK
+//deverá ter cadastrado os seguintes candidatos:
+//Barone - 90000
+//Bidu - 90999
+//Monteiro - 95000
+//João Fera - 95999
+
+//1.3.3-O sistema deverar dá a opção do usuario votar branco ou nulo. Ok
+
+//1.3.4-Este processo deverá ser repetido até o usuário digitar 0, ou seja
+//o flag, para terminar a votação OK
+
+//1.3.5-Encerrada a votação, o sistema deverá imprimir as seguintes informações:
+//1.3.5.1-o numero de votos de cada candidato; Ok
+//1.3.5.2-o numero de votos em branco; OK
+//1.3.5.3-o número de votos nulos; OK
+//1.3.5.4-o prefeito eleito; OK
+//1.3.4.5-o vereador mais votado; OK
+
+//OBS1-Estes são os requesitos minimos exigidos nesse trabalho.  OK
+//OBS2-Sugere-se uma implantação que a cada 3 votos de Barone, deve-se retirar
+//1 voto de Barone e passa-lo para Bidu.(
+//Essa implatação deverá ser um algoritmo diferente. então serão 2 arquivos.
+
+var
+senha, nulo, branco, votos, votoprefeito, ribeiro, hebert: inteiro
+votovereador, barone,baronev, bidu, monteiro, joaofera: inteiro
+
+votacao: caracter
+
+Inicio
+ribeiro := 0
+hebert := 0
+barone :=0
+bidu :=0
+monteiro :=0
+joaofera :=0
+
+
+escreval("digite a senha para iniciar a votação:")
+escreval()
+
+leia (senha)
+
+
+se (senha <> 2411) entao
+escreval("senha incorreta")
+senao
+escreval("senha correta")
+//
+
+escreval()
+escreval("Você deseja inciar a votação?")
+escreval("se sim, digite 1")
+escreval("caso contrário, digite 0")
+escreval()
+
+leia (votacao)
+enquanto (votacao = "1") faca
+ escolha votacao
+         caso "1"
+              escreval("votação iniciada")
+              escreval("vote para candidato a prefeito:")
+              escreval()
+              escreval("Hebert - 90")
+              escreval("Ribeiro - 95")
+              escreval("Nulo - 0")
+              escreval("branco - 1")
+
+              
+leia(votoprefeito)
+escreval()
+ escolha votoprefeito
+         caso 90
+              hebert := (hebert +1)
+              escreval("Você votou em Hebert")
+              escreval()
+         caso 95
+              ribeiro := (ribeiro +1)
+              escreval("Você votou em Ribeiro")
+              escreval()
+         caso 0
+              nulo := (nulo + 1)
+              escreval("Você votou nulo")
+              escreval()
+          caso 1
+              branco := (branco + 1)
+              escreval("Você votou branco")
+              escreval()
+         outrocaso
+              escreval("candidato não registrado.")
+              escreval()
+fimescolha
+
+         escreval("escolha seu candidato a vereador:")
+         escreval()
+         escreval("Barone - 90000")
+         escreval("Bidu - 90999")
+         escreval("Monteiro - 95000")
+         escreval("João Fera - 95999")
+         escreval("Nulo - 0")
+         escreval("branco - 1")
+         
+leia (votovereador)
+escreval()
+ escolha votovereador
+
+         caso 90000
+              barone := (barone +1)
+              escreval("Você votou em Barone")
+              escreval()
+         caso 90999
+              bidu := (bidu + 1)
+              escreval("Você votou em Bidu")
+              escreval()
+         caso 95000
+              monteiro := (monteiro + 1)
+              escreval("Você votou em Monteiro")
+              escreval()
+         caso 95999
+              joaofera := (joaofera + 1)
+              escreval("Você votou em João Fera")
+              escreval()
+         caso 0
+              nulo := (nulo + 1)
+              escreval("Você votou nulo")
+              escreval()
+         caso 1
+              branco := (branco + 1)
+              escreval("Você votou branco")
+              escreval()
+         outrocaso
+         escreval("vereador não registrado")
+         
+fimescolha
+
+         caso "0"
+              escreval("votação encerrada")
+         outrocaso
+              escreval("comando não indentificado")
+fimescolha
+
+
+votos := branco + ribeiro + hebert + barone + bidu + monteiro + joaofera
+
+escreval("deseja votar novamente?")
+escreval("se sim, digite 1")
+escreval("caso contrário, digite 0")
+leia (votacao)
+fimenquanto
+
+baronev := (barone div 3)
+barone := (barone - baronev)
+bidu := (bidu + baronev)
+
+escreval()
+
+escreval("Votação encerrada")
+escreval()
+
+escreval("Votos para prefeito:")
+escreval("Votos Ribeiro:" ,ribeiro)
+escreval("Votos Hebert:" ,hebert)
+escreval()
+
+escreval("Votos para vereador:")
+escreval("Votos Barone:" ,barone)
+escreval("Votos Bidu:" ,bidu)
+escreval("Votos Monteiro:" ,monteiro)
+escreval("Votos João Fera:" ,joaofera)
+escreval()
+
+escreval("Votos Nulos:" ,nulo)
+escreval("votos brancos:" ,branco)
+escreval("votos totais:" ,votos)
+fimse
+
+
+
+
+
+
+
+
+Fimalgoritmo
